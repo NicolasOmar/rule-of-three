@@ -1,0 +1,73 @@
+{
+  "name": "rule-of-three",
+  "version": "0.0.1",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build --prod --baseHref=/rule-of-three/",
+    "test": "ng test",
+    "e2e": "ng e2e",
+    "local": "ng serve --o",
+    "setup": "npm i -g @angular/cli && npm i",
+    "tsc": "tsc",
+    "lint": "eslint --fix src/**/!(*spec).ts",
+    "prettier": "prettier --write src",
+    "update-version": "node update-version.js"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "~11.0.1",
+    "@angular/common": "~11.0.1",
+    "@angular/compiler": "~11.0.1",
+    "@angular/core": "~11.0.1",
+    "@angular/forms": "~11.0.1",
+    "@angular/platform-browser": "~11.0.1",
+    "@angular/platform-browser-dynamic": "~11.0.1",
+    "@angular/router": "~11.0.1",
+    "rxjs": "~6.6.0",
+    "tslib": "^2.0.0",
+    "zone.js": "~0.10.2"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "~0.1100.2",
+    "@angular/cli": "~11.0.2",
+    "@angular/compiler-cli": "~11.0.1",
+    "@types/jasmine": "~3.6.0",
+    "@types/node": "^12.11.1",
+    "@typescript-eslint/eslint-plugin": "^4.8.1",
+    "codelyzer": "^6.0.0",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "husky": "^4.3.0",
+    "jasmine-core": "~3.6.0",
+    "jasmine-spec-reporter": "~5.0.0",
+    "karma": "~5.1.0",
+    "karma-chrome-launcher": "~3.1.0",
+    "karma-coverage": "~2.0.3",
+    "karma-jasmine": "~4.0.0",
+    "karma-jasmine-html-reporter": "^1.5.0",
+    "lint-staged": "^10.5.1",
+    "prettier": "^2.1.2",
+    "prettier-eslint": "^11.0.0",
+    "prompts": "^2.4.0",
+    "protractor": "~7.0.0",
+    "ts-node": "~8.3.0",
+    "tslint": "~6.1.0",
+    "typescript": "~4.0.2"
+  },
+  "lint-staged": {
+    "src/**/!(*spec).ts": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "src/**/*.scss": [
+      "prettier --write"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run tsc && lint-staged",
+      "pre-push": "npm run build && npm run update-version"
+    }
+  }
+}

@@ -1,0 +1,6 @@
+package.json
+package-lock.json
+docs
+e2e
+update-version.js
+karma.conf.js
