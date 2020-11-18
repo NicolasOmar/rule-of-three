@@ -1,5 +1,32 @@
 <layout>
   <section body>
-    Rule of Three
+    <form-title [text]="mainTitle"></form-title>
+
+    <form
+      class="ui form"
+      *ngIf="appForm"
+      [ngClass]="{ 'loading': isLoading }"
+      [formGroup]="appForm"
+      (submit)="onSubmit()"
+    >
+      <section class="ui segment">
+        <form-input
+          [config]="formInputs.first"
+          formControlName="first">
+        </form-input>
+
+        <form-input
+          [config]="formInputs.second"
+          formControlName="second">
+        </form-input>
+        
+        <form-input
+          [config]="formInputs.third"
+          formControlName="third">
+        </form-input>
+        
+        <p>{{ finalNumber }}</p>
+      </section>
+    </form>
   </section>
 </layout>
