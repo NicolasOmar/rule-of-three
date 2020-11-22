@@ -1,27 +1,32 @@
-# RuleOfThree
+# Rule Of Three ![RuleOfThree version](https://img.shields.io/github/package-json/v/nicolasomar/rule-of-three?color=success&label=%20&style=flat-square)
+Web page based on Angular for a handy rule of three calculator.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.2.
+## What do I need?
+Before cloning this repo, I recommend installing the following software:
+- [Node](https://nodejs.org/en/download/) >=12.16.1 to install packages
+- [Angular CLI](https://cli.angular.io/) to run Angular specific commands
 
-## Development server
+## Setup
+After cloning the repo, go to the created folder and install the node packages (including [Angular CLI](https://cli.angular.io/) at the global level).
+```sh
+git clone https://github.com/NicolasOmar/rule-of-three.git
+cd rule-of-three
+npm run setup
+```
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## How to run it
+To run the app as a non-stopping service and start it in a new browser tab
+```sh
+npm start
+```
+To run the service only
+```sh
+npm run local
+```
 
-## Code scaffolding
+## Branches and Environments
+Because I am using [GitHub Pages](https://pages.github.com/) to deploy and host the site, I am maintaining the `main` branch only.
+Therefore, the following [site link](https://nicolasomar.github.io/rule-of-three) sends you to the last pushed and deployed version.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## License
+**MIT**

@@ -21,6 +21,7 @@ export class AppComponent implements OnInit, OnDestroy {
   public appForm: FormGroup;
   public mainTitle = 'Rule of Three';
   public isLoading = false;
+  public contentWide = 10;
   public finalNumber: number;
   public formInputs;
 
@@ -36,8 +37,7 @@ export class AppComponent implements OnInit, OnDestroy {
     this.appForm = this.fb.group({
       first: [],
       second: [],
-      third: [],
-      fourth: []
+      third: []
     });
   }
 
@@ -49,10 +49,6 @@ export class AppComponent implements OnInit, OnDestroy {
         }
       })
     );
-  }
-
-  public onSubmit(): void {
-    console.warn('test');
   }
 
   ngOnDestroy(): void {

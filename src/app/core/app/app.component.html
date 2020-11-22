@@ -1,5 +1,5 @@
-<layout>
-  <section body>
+<layout [contentWide]="contentWide">
+  <section main-body>
     <form-title [text]="mainTitle"></form-title>
 
     <form
@@ -7,7 +7,6 @@
       *ngIf="appForm"
       [ngClass]="{ 'loading': isLoading }"
       [formGroup]="appForm"
-      (submit)="onSubmit()"
     >
       <section class="ui segment">
         <form-input
@@ -25,7 +24,7 @@
           formControlName="third">
         </form-input>
         
-        <p>{{ finalNumber }}</p>
+        <div class="ui big red horizontal label">{{ finalNumber || '-' }}</div>
       </section>
     </form>
   </section>

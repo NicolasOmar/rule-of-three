@@ -1,7 +1,13 @@
 <main class="ui middle aligned grid">
-  <aside [ngClass]="layoutConfig.margin"></aside>
+  <aside [ngClass]="layoutConfig.margin">
+    <ng-content select="[left-body]"></ng-content>
+  </aside>
+
   <section [ngClass]="layoutConfig.content">
-    <ng-content select="[body]"></ng-content>
+    <ng-content select="[main-body]"></ng-content>
   </section>
-  <aside [ngClass]="layoutConfig.margin"></aside>
+
+  <aside [ngClass]="layoutConfig.margin">
+    <ng-content select="[left-body]"></ng-content>
+  </aside>
 </main>

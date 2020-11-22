@@ -6,13 +6,16 @@ import { Injectable } from '@angular/core';
 export class AppInputService {
   public appFormInputs = {
     first: {
-      placeholder: 'If someone charges X amount of money'
+      leftLabel: 'If someone charges',
+      rightLabel: 'USD per word'
     },
     second: {
-      placeholder: 'For Y amount of words'
+      leftLabel: 'For',
+      rightLabel: 'words'
     },
     third: {
-      placeholder: 'If I have a project with Z words'
+      leftLabel: 'How much will cost for a project with',
+      rightLabel: 'words'
     },
     fourth: {
       placeholder: 'Then the project will cost...',

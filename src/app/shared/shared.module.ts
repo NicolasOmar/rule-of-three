@@ -3,9 +3,9 @@ import { CommonModule } from '@angular/common';
 // COMPONENTS
 import { LayoutComponent } from './components/layout/layout.component';
 import { FormInputComponent } from './components/form-input/form-input.component';
-import { TitleComponent } from './components/title/title.component';
+import { FormTitleComponent } from './components/form-title/form-title.component';
 
-const COMPONENTS = [LayoutComponent, FormInputComponent, TitleComponent];
+const COMPONENTS = [LayoutComponent, FormInputComponent, FormTitleComponent];
 
 @NgModule({
   declarations: [...COMPONENTS],
