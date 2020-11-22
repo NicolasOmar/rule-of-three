@@ -3,6 +3,10 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { Subscription } from 'rxjs';
 // SERVICES
 import { AppInputService } from '@core/services/app-input.service';
+// INTERFACES
+import { LabelConfig } from '@shared/interfaces/inputs.interface';
+// ENUMS
+import { ColorEnum, SizeEnum } from '@shared/enums/inputs.enums';
 
 interface FormStructure {
   first: number;
@@ -23,6 +27,12 @@ export class AppComponent implements OnInit, OnDestroy {
   public isLoading = false;
   public contentWide = 10;
   public finalNumber: number;
+  public result: LabelConfig = {
+    size: SizeEnum.big,
+    color: ColorEnum.red,
+    value: null,
+    unit: 'USD'
+  };
   public formInputs;
 
   constructor(private fb: FormBuilder, private inputService: AppInputService) {}
@@ -44,9 +54,10 @@ export class AppComponent implements OnInit, OnDestroy {
   private setLogic(): void {
     this.sub.add(
       this.appForm.valueChanges.subscribe((changes: FormStructure) => {
-        if (changes.first && changes.second && changes.third) {
-          this.finalNumber = (changes.third * changes.second) / changes.first;
-        }
+        this.result.value =
+          changes.first && changes.second && changes.third
+            ? ((changes.third * changes.second) / changes.first).toString()
+            : null;
       })
     );
   }
