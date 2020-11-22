@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+// SERVICES
 import { RuleDataService } from '@core/services/rule-data.service';
+// INTERFACES
 import { RuleSelector } from '@shared/interfaces/rule.interfaces';
 
 @Component({
