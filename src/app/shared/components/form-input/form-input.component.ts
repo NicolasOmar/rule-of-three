@@ -1,7 +1,7 @@
 import { Component, Input, OnInit, Optional, Self } from '@angular/core';
 import { NgControl } from '@angular/forms';
 // INTERFACES
-import { InputConfig } from '@shared/interfaces/inputs.interface';
+import { InputConfig } from '@shared/interfaces/form.interfaces';
 
 @Component({
   selector: 'form-input',

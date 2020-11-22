@@ -1,6 +1,7 @@
-import { Injectable, Input } from '@angular/core';
-import { InputConfig, LabelConfig } from '@shared/interfaces/inputs.interface';
+import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
+// INTERFACES
+import { InputConfig, LabelConfig } from '@shared/interfaces/form.interfaces';
 
 @Injectable({
   providedIn: 'root'

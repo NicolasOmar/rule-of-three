@@ -1,16 +1,9 @@
 <layout [contentWide]="contentWide">
   <aside left-body>
-    <div class="ui vertical menu">
-      <a class="active teal item">
-        Cost of a Project
-      </a>
-      <a class="item">
-        USD per page
-      </a>
-    </div>
+    <rule-selector></rule-selector>
   </aside>
   <section main-body>
     <form-title [text]="mainTitle"></form-title>
-    <rule-form></rule-form>
+    <router-outlet></router-outlet>
   </section>
 </layout>

@@ -1,0 +1,10 @@
+<div class="ui vertical menu">
+  <a
+    *ngFor="let rule of rules; index as i"
+    class="item"
+    [routerLink]="rule.route"
+    [routerLinkActive]="['active', 'teal']"
+  >
+    {{ rule.label }}
+  </a>
+</div>

@@ -4,7 +4,7 @@ import { Subscription } from 'rxjs';
 // SERVICES
 import { FormService } from '@core/services/form.service';
 // INTERFACES
-import { FormStructure, InputConfig, LabelConfig } from '@shared/interfaces/inputs.interface';
+import { FormStructure, InputConfig, LabelConfig } from '@shared/interfaces/form.interfaces';
 
 @Component({
   selector: 'rule-form',

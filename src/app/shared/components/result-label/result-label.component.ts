@@ -1,7 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ColorEnum, SizeEnum } from '@shared/enums/inputs.enums';
 // INTERFACES
-import { LabelConfig } from '@shared/interfaces/inputs.interface';
+import { LabelConfig } from '@shared/interfaces/form.interfaces';
+// ENUMS
+import { ColorEnum, SizeEnum } from '@shared/enums/inputs.enums';
 
 @Component({
   selector: 'result-label',

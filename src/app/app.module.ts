@@ -5,12 +5,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 // MODULES
 import { SharedModule } from '@shared/shared.module';
-// APP COMPONENT
+// BASE COMPONENTS
 import { AppComponent } from '@core/components/app/app.component';
 import { RuleFormComponent } from '@core/components/rule-form/rule-form.component';
+import { RuleSelectorComponent } from '@core/components/rule-selector/rule-selector.component';
 
 @NgModule({
-  declarations: [AppComponent, RuleFormComponent],
+  declarations: [AppComponent, RuleFormComponent, RuleSelectorComponent],
   imports: [BrowserModule, SharedModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent]
