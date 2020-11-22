@@ -6,10 +6,11 @@ import { AppRoutingModule } from './app-routing.module';
 // MODULES
 import { SharedModule } from '@shared/shared.module';
 // APP COMPONENT
-import { AppComponent } from '@core/app/app.component';
+import { AppComponent } from '@core/components/app/app.component';
+import { RuleFormComponent } from '@core/components/rule-form/rule-form.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, RuleFormComponent],
   imports: [BrowserModule, SharedModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent]

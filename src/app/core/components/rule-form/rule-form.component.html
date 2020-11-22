@@ -1,0 +1,24 @@
+<form
+  class="ui form"
+  *ngIf="ruleForm && result && inputs"
+  [formGroup]="ruleForm"
+>
+  <section class="ui segment">
+    <form-input
+      [config]="inputs[0]"
+      formControlName="first">
+    </form-input>
+
+    <form-input
+      [config]="inputs[1]"
+      formControlName="second">
+    </form-input>
+    
+    <form-input
+      [config]="inputs[2]"
+      formControlName="third">
+    </form-input>
+    
+    <result-label [config]="result"></result-label>
+  </section>
+</form>
