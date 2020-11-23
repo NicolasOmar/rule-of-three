@@ -3,31 +3,25 @@ name: Codecov
 on: [push]
 
 jobs:
-  run:
-    strategy:
-      max-parallel: 1
-      matrix:
-        os: [ubuntu-latest, macos-latest, windows-latest]
-    
-    runs-on: ${{ matrix.os }}
+  build:
+    runs-on: ubuntu-latest
     
     steps:
-      - uses: actions/checkout@v2
-      - name: Setup Node
-        uses: actions/setup-node@v1
-        with:
-          node-version: 12
-      
-      - name: Install
-        run: npm install codecov -g
+    - name: Checkout respository
+      uses: actions/checkout@v2
 
-      - name: Upload tests
-      - uses: codecov/codecov-action@v1.0.15
-        with:
-          file: ./coverage-final.json
-          directory: ./coverage/rule-of-three/
-          flags: unittests
-          name: codecov-umbrella
-          fail_ci_if_error: true
-          path_to_write_report: ./coverage/codecov_report.txt
-          verbose: true
+    - name: Set up node environment
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12
+
+    - name: Install dependences
+      run: npm install codecov -g
+
+    - name: Run Codecov coverage colector
+    - uses: codecov/codecov-action@v1.0.15
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
+        file: ./coverage-final.json
+        directory: ./coverage/rule-of-three/
+        flags: unittests
