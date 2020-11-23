@@ -22,6 +22,5 @@ jobs:
       uses: codecov/codecov-action@v1.0.15
       with:
         token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
-        file: ./coverage-final.json
-        directory: ./coverage/rule-of-three/
+        file: ./coverage/rule-of-three/coverage-final.json
         flags: unittests
