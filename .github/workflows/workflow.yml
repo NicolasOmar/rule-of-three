@@ -3,7 +3,7 @@ name: Codecov
 on: [push]
 
 jobs:
-  build:
+  run:
     runs-on: ubuntu-latest
     
     steps:
@@ -19,7 +19,7 @@ jobs:
       run: npm install codecov -g
 
     - name: Run Codecov coverage colector
-    - uses: codecov/codecov-action@v1.0.15
+      uses: codecov/codecov-action@v1.0.15
       with:
         token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
         file: ./coverage-final.json
