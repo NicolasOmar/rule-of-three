@@ -24,8 +24,8 @@ module.exports = function (config) {
       reporters: [
         { type: 'html' },
         { type: 'text-summary' }, // generates ./coverage/lcov.info
-        { type:'lcovonly', subdir: '.' }, // generates ./coverage/coverage-final.json
-        { type:'json', subdir: '.' },
+        { type: 'lcovonly' }, // generates ./coverage/coverage-final.json
+        { type: 'json' },
       ]
     },
     reporters: ['progress', 'kjhtml', 'coverage'],

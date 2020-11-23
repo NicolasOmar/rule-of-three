@@ -17,8 +17,17 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 12
+      
       - name: Install
-        run: npm run setup && npm install codecov -g
+        run: npm install codecov -g
+
+      - name: Upload tests
       - uses: codecov/codecov-action@v1.0.15
-      - name: Run tests
-        run: ng test --codeCoverage=true --watch=false
+        with:
+          file: ./coverage-final.json
+          directory: ./coverage/rule-of-three/
+          flags: unittests
+          name: codecov-umbrella
+          fail_ci_if_error: true
+          path_to_write_report: ./coverage/codecov_report.txt
+          verbose: true
