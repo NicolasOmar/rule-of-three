@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
 // SERVICES
-import { FormService } from '@core/services/form.service';
+import { FormStructureService } from '@core/services/form-structure.service';
 // INTERFACES
 import { FormStructure, InputConfig, LabelConfig } from '@shared/interfaces/form.interfaces';
 
@@ -18,7 +18,7 @@ export class RuleFormComponent implements OnInit {
   public inputs: Array<InputConfig>;
   public formInputs;
 
-  constructor(private fb: FormBuilder, private formService: FormService) {}
+  constructor(private fb: FormBuilder, private formService: FormStructureService) {}
 
   ngOnInit(): void {
     this.setForm();

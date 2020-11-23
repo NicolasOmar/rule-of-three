@@ -6,7 +6,7 @@ import { RuleSelector } from '@shared/interfaces/rule.interfaces';
   providedIn: 'root'
 })
 export class RuleDataService {
-  public rules: Array<RuleSelector> = [
+  public ruleSelectors: Array<RuleSelector> = [
     {
       label: 'Cost of a Project',
       route: '/home'

@@ -11,12 +11,12 @@ export class FormDataService {
   public mainFormData: FormConfig = {
     inputs: [
       {
-        leftLabel: 'If someone charges',
-        rightLabel: 'USD per word'
+        leftLabel: 'If someone for',
+        rightLabel: 'words'
       },
       {
-        leftLabel: 'For',
-        rightLabel: 'words'
+        leftLabel: 'Charges me',
+        rightLabel: 'USD per word'
       },
       {
         leftLabel: 'How much will cost for a project with',

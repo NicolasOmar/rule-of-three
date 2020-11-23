@@ -6,7 +6,7 @@ import { InputConfig, LabelConfig } from '@shared/interfaces/form.interfaces';
 @Injectable({
   providedIn: 'root'
 })
-export class FormService {
+export class FormStructureService {
   private result$ = new BehaviorSubject<LabelConfig>(null);
   private inputs$ = new BehaviorSubject<Array<InputConfig>>([]);
 

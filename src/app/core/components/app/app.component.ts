@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 // SERVICES
 import { FormDataService } from '@core/services/form-data.service';
-import { FormService } from '@core/services/form.service';
+import { FormStructureService } from '@core/services/form-structure.service';
 import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
@@ -16,7 +16,7 @@ export class AppComponent implements OnInit, OnDestroy {
   public mainTitle = 'Rule of Three';
 
   constructor(
-    private formService: FormService,
+    private formService: FormStructureService,
     private formDataService: FormDataService,
     private router: Router
   ) {}

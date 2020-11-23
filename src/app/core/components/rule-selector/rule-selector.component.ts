@@ -19,6 +19,6 @@ export class RuleSelectorComponent implements OnInit {
   }
 
   private setRules(): void {
-    this.rules = this.ruleDataService.rules;
+    this.rules = this.ruleDataService.ruleSelectors;
   }
 }
