@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
 // SERVICES
 import { FormService } from '@core/services/form.service';
@@ -26,14 +26,16 @@ export class RuleFormComponent implements OnInit {
   }
 
   private setForm(): void {
-    this.sub.add(this.formService.getResult().subscribe(config => (this.result = config)));
+    const regex = /(\d|\.)/gm;
+    const validators = [Validators.required, Validators.pattern(regex)];
 
+    this.sub.add(this.formService.getResult().subscribe(config => (this.result = config)));
     this.sub.add(this.formService.getInputs().subscribe(config => (this.inputs = config)));
 
     this.ruleForm = this.fb.group({
-      first: [],
-      second: [],
-      third: []
+      first: [null, [...validators]],
+      second: [null, [...validators]],
+      third: [null, [...validators]]
     });
   }
 
@@ -41,7 +43,7 @@ export class RuleFormComponent implements OnInit {
     this.sub.add(
       this.ruleForm.valueChanges.subscribe((changes: FormStructure) => {
         this.result.value =
-          changes.first && changes.second && changes.third
+          changes.first && changes.second && changes.third && this.ruleForm.valid
             ? ((changes.third * changes.second) / changes.first).toString()
             : null;
       })
