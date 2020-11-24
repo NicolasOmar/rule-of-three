@@ -7,20 +7,33 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - name: Checkout respository
+    - name: Checkout repo
       uses: actions/checkout@v2
 
-    - name: Set up node environment
+    - name: Set up environment
       uses: actions/setup-node@v1
       with:
         node-version: 12
 
     - name: Install dependences
-      run: npm install codecov -g
+      run: npm run setup-ci
+
+    - name: Run tests
+      run: npm test
 
     - name: Run Codecov coverage colector
       uses: codecov/codecov-action@v1.0.15
       with:
-        token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
+        token: ${{ secrets.CODECOV_TOKEN }}
         file: ./coverage/rule-of-three/coverage-final.json
         flags: unittests
+    
+    - name: Build app
+      run: npm run build
+
+    - name: Add & Commit
+      uses: EndBug/add-and-commit@v5.2.0
+      with:
+        message: "Adding new data"
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

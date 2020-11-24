@@ -23,9 +23,8 @@ module.exports = function (config) {
       subdir: '.',
       reporters: [
         { type: 'html' },
-        { type: 'text-summary' }, // generates ./coverage/lcov.info
-        { type: 'lcovonly' }, // generates ./coverage/coverage-final.json
-        { type: 'json' },
+        { type: 'text-summary' },
+        { type: 'json' }, // generates ./coverage/<repo-name>/coverage-final.json
       ]
     },
     reporters: ['progress', 'kjhtml', 'coverage'],
@@ -35,6 +34,12 @@ module.exports = function (config) {
     autoWatch: true,
     browsers: ['Chrome'],
     singleRun: false,
-    restartOnFileChange: true
+    restartOnFileChange: true,
+    customLaunchers: {
+      ChromeHeadlessCustom: {
+        base: 'ChromeHeadless',
+        flags: ['--no-sandbox', '--disable-gpu']
+      }
+    }
   });
 };
