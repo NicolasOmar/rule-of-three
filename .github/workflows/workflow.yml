@@ -35,6 +35,6 @@ jobs:
       uses: EndBug/add-and-commit@v5.2.0
       with:
         message: "Adding builded app for deployed site"
-        remove: "coverage"
+        remove: "coverage -r"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
