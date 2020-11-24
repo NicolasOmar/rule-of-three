@@ -16,10 +16,10 @@ jobs:
         node-version: 12
 
     - name: Install dependences
-      run: npm run setup-ci
+      run: npm run setup:ci
 
     - name: Run tests
-      run: npm test
+      run: npm run test:ci
 
     - name: Run Codecov coverage colector
       uses: codecov/codecov-action@v1.0.15
@@ -34,6 +34,7 @@ jobs:
     - name: Add & Commit
       uses: EndBug/add-and-commit@v5.2.0
       with:
-        message: "Adding new data"
+        message: "Adding builded app for deployed site"
+        remove: "./coverage"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
