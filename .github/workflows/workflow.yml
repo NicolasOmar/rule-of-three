@@ -1,4 +1,4 @@
-name: Codecov
+name: Deploy to PROD
 
 on: [push]
 
@@ -31,10 +31,9 @@ jobs:
     - name: Build app
       run: npm run build
 
-    - name: Add & Commit
+    - name: Commit builded app
       uses: EndBug/add-and-commit@v5.2.0
       with:
-        message: "Adding builded app for deployed site"
-        remove: "coverage -r"
+        message: "Adding builded app for deployed/published site"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

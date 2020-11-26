@@ -1,11 +1,11 @@
 {
   "name": "rule-of-three",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --prod --baseHref=/rule-of-three/",
-    "test": "ng test",
+    "test": "ng test --codeCoverage=true",
     "test:ci": "ng test --codeCoverage=true --watch=false --browsers=ChromeHeadlessCustom",
     "e2e": "ng e2e",
     "local": "ng serve --o",

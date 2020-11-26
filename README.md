@@ -1,4 +1,4 @@
-# Rule Of Three ![RuleOfThree version](https://img.shields.io/github/package-json/v/nicolasomar/rule-of-three?color=success&label=%20&style=flat-square)
+# Rule Of Three ![RuleOfThree version](https://img.shields.io/github/package-json/v/nicolasomar/rule-of-three?color=success&label=%20&style=flat-square) [![RuleOfThree coverage](https://codecov.io/gh/NicolasOmar/rule-of-three/branch/main/graph/badge.svg?token=A9HG20UIIO)](https://codecov.io/gh/NicolasOmar/rule-of-three)
 Web page based on Angular for a handy rule of three calculator.
 
 ## What do I need?
