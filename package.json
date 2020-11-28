@@ -10,7 +10,6 @@
     "e2e": "ng e2e",
     "local": "ng serve --o",
     "setup": "npm i -g @angular/cli && npm i",
-    "setup:ci": "npm run setup && npm i -g codecov",
     "tsc": "tsc",
     "lint": "eslint --fix src/**/!(*spec).ts",
     "prettier": "prettier --write src",

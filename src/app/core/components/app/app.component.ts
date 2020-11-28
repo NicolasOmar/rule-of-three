@@ -1,9 +1,13 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 // SERVICES
 import { FormDataService } from '@core/services/form-data.service';
 import { FormStructureService } from '@core/services/form-structure.service';
-import { NavigationEnd, Router } from '@angular/router';
+// INTERFACES
+import { FormConfig } from '@shared/interfaces/form.interfaces';
+// ENUMS
+import { RouteEnum } from '@shared/enums/routes.enums';
 
 @Component({
   selector: 'app-root',
@@ -30,11 +34,14 @@ export class AppComponent implements OnInit, OnDestroy {
       this.router.events.subscribe(route => {
         if (route instanceof NavigationEnd) {
           switch (route.url) {
-            case '/second':
-              this.setFormData(this.formDataService.secondFormData);
+            case RouteEnum.First:
+              this.setFormData(this.formDataService.data[0]);
               break;
-            default:
-              this.setFormData(this.formDataService.mainFormData);
+            case RouteEnum.Second:
+              this.setFormData(this.formDataService.data[1]);
+              break;
+            case RouteEnum.Third:
+              this.setFormData(this.formDataService.data[2]);
               break;
           }
         }

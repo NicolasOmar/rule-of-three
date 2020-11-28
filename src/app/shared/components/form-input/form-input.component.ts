@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, Optional, Self } from '@angular/core';
+import { Component, Input, Optional, Self } from '@angular/core';
 import { NgControl } from '@angular/forms';
 // INTERFACES
 import { InputConfig } from '@shared/interfaces/form.interfaces';
@@ -8,20 +8,15 @@ import { InputConfig } from '@shared/interfaces/form.interfaces';
   templateUrl: './form-input.component.html',
   styleUrls: ['./form-input.component.scss']
 })
-export class FormInputComponent implements OnInit {
+export class FormInputComponent {
   @Input() config: InputConfig;
 
-  public divClass: string;
   public _value: string | number;
   public onChanged;
   public onTouched;
 
   constructor(@Self() @Optional() public control: NgControl) {
     this.control && (this.control.valueAccessor = this);
-  }
-
-  ngOnInit(): void {
-    this.divClass = this.config.icon ? 'ui left icon input' : 'ui left input';
   }
 
   public onInput(value: string | number): void {
