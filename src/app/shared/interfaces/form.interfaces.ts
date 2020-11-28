@@ -1,4 +1,4 @@
-import { ColorEnum, SizeEnum } from '@shared/enums/inputs.enums';
+import { ColorEnum, SizeEnum, TypeEnum } from '@shared/enums/inputs.enums';
 
 export interface FormStructure {
   first: number;
@@ -11,8 +11,9 @@ export interface InputConfig {
   leftLabel?: string;
   rightLabel?: string;
   placeholder?: string;
-  type?: string;
+  type?: TypeEnum;
   isReadonly?: boolean;
+  baseValue?: string | number;
 }
 
 export interface LabelConfig {

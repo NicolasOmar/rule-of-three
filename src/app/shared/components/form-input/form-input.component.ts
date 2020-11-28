@@ -2,6 +2,8 @@ import { Component, Input, Optional, Self } from '@angular/core';
 import { NgControl } from '@angular/forms';
 // INTERFACES
 import { InputConfig } from '@shared/interfaces/form.interfaces';
+// ENUMS
+import { TypeEnum } from '@shared/enums/inputs.enums';
 
 @Component({
   selector: 'form-input',
@@ -11,6 +13,7 @@ import { InputConfig } from '@shared/interfaces/form.interfaces';
 export class FormInputComponent {
   @Input() config: InputConfig;
 
+  public typeEnum = TypeEnum;
   public _value: string | number;
   public onChanged;
   public onTouched;

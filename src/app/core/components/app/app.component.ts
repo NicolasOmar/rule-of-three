@@ -4,8 +4,6 @@ import { Subscription } from 'rxjs';
 // SERVICES
 import { FormDataService } from '@core/services/form-data.service';
 import { FormStructureService } from '@core/services/form-structure.service';
-// INTERFACES
-import { FormConfig } from '@shared/interfaces/form.interfaces';
 // ENUMS
 import { RouteEnum } from '@shared/enums/routes.enums';
 
@@ -42,6 +40,9 @@ export class AppComponent implements OnInit, OnDestroy {
               break;
             case RouteEnum.Third:
               this.setFormData(this.formDataService.data[2]);
+              break;
+            case RouteEnum.Fourth:
+              this.setFormData(this.formDataService.data[3]);
               break;
           }
         }

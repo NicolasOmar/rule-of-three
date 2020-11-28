@@ -20,6 +20,10 @@ export class RuleDataService {
     {
       label: 'USD per hour',
       route: RouteEnum.Third
+    },
+    {
+      label: 'USD per word',
+      route: RouteEnum.Fourth
     }
   ];
 }

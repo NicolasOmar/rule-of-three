@@ -26,3 +26,8 @@ export enum ColorEnum {
   grey = 'grey',
   black = 'black'
 }
+
+export enum TypeEnum {
+  Text = 'text',
+  Number = 'number'
+}

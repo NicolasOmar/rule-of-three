@@ -21,25 +21,32 @@ export class RuleFormComponent implements OnInit {
   constructor(private fb: FormBuilder, private formService: FormStructureService) {}
 
   ngOnInit(): void {
-    this.setForm();
-    this.setLogic();
+    this.listenServices();
+  }
+
+  private listenServices(): void {
+    this.sub.add(
+      this.formService.getResult().subscribe(resultConfig => (this.result = resultConfig))
+    );
+    this.sub.add(
+      this.formService.getInputs().subscribe(inputsConfig => {
+        this.inputs = inputsConfig;
+        this.setForm();
+      })
+    );
   }
 
   private setForm(): void {
-    const regex = /(\d|\.)/gm;
-    const validators = [Validators.required, Validators.pattern(regex)];
-
-    this.sub.add(this.formService.getResult().subscribe(config => (this.result = config)));
-    this.sub.add(this.formService.getInputs().subscribe(config => (this.inputs = config)));
-
+    const validators = [Validators.required];
     this.ruleForm = this.fb.group({
-      first: [null, [...validators]],
-      second: [null, [...validators]],
-      third: [null, [...validators]]
+      first: [this.inputs[0].baseValue || null, [...validators]],
+      second: [this.inputs[1].baseValue || null, [...validators]],
+      third: [this.inputs[2].baseValue || null, [...validators]]
     });
+    this.setResultLogic();
   }
 
-  private setLogic(): void {
+  private setResultLogic(): void {
     this.sub.add(
       this.ruleForm.valueChanges.subscribe((changes: FormStructure) => {
         this.result.value =

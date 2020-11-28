@@ -24,6 +24,10 @@ const routes: Routes = [
     component: RuleFormComponent
   },
   {
+    path: RouteStringEnum.Fourth,
+    component: RuleFormComponent
+  },
+  {
     path: '**',
     redirectTo: RouteStringEnum.First
   }
