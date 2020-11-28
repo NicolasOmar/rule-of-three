@@ -10,20 +10,16 @@ import { RouteEnum } from '@shared/enums/routes.enums';
 export class RuleDataService {
   public ruleSelectors: Array<RuleSelector> = [
     {
-      label: 'Cost of a Project',
+      label: 'USD por hora/palabra',
       route: RouteEnum.First
     },
     {
-      label: 'USD per page',
+      label: 'USD por hora de jornada',
       route: RouteEnum.Second
     },
     {
-      label: 'USD per hour',
+      label: 'USD por pagina/palabra',
       route: RouteEnum.Third
-    },
-    {
-      label: 'USD per word',
-      route: RouteEnum.Fourth
     }
   ];
 }

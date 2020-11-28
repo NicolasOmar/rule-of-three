@@ -12,69 +12,18 @@ export class FormDataService {
     {
       inputs: [
         {
-          leftLabel: 'If someone for',
-          rightLabel: 'words',
+          leftLabel: 'Me cobra',
+          rightLabel: 'USD por hora',
           type: TypeEnum.Number
         },
         {
-          leftLabel: 'Charges me',
-          rightLabel: 'USD per word',
+          leftLabel: 'La hora equivale a',
+          rightLabel: 'palabras',
           type: TypeEnum.Number
         },
         {
-          leftLabel: 'How much will cost for a project with',
-          rightLabel: 'words',
-          type: TypeEnum.Number
-        }
-      ],
-      result: {
-        size: SizeEnum.big,
-        color: ColorEnum.red,
-        value: null,
-        unit: 'USD'
-      }
-    },
-    {
-      inputs: [
-        {
-          leftLabel: 'If someone charges',
-          rightLabel: 'USD per page',
-          type: TypeEnum.Number
-        },
-        {
-          leftLabel: 'And one page has',
-          rightLabel: 'words',
-          type: TypeEnum.Number
-        },
-        {
-          leftLabel: 'How much will cost for',
-          rightLabel: 'page/s',
-          type: TypeEnum.Number
-        }
-      ],
-      result: {
-        size: SizeEnum.big,
-        color: ColorEnum.red,
-        value: null,
-        unit: 'USD'
-      }
-    },
-    {
-      inputs: [
-        {
-          leftLabel: 'If someone charges',
-          rightLabel: 'USD',
-          type: TypeEnum.Number
-        },
-        {
-          leftLabel: 'For',
-          rightLabel: 'hours',
-          type: TypeEnum.Number,
-          baseValue: 6
-        },
-        {
-          leftLabel: 'How much will charge for',
-          rightLabel: 'hour',
+          leftLabel: '¿Cuánto me cobra por',
+          rightLabel: 'palabra',
           type: TypeEnum.Number,
           baseValue: 1
         }
@@ -89,18 +38,45 @@ export class FormDataService {
     {
       inputs: [
         {
-          leftLabel: 'If someone charges',
-          rightLabel: 'USD per hour',
+          leftLabel: 'Cobra',
+          rightLabel: 'USD por jornada',
           type: TypeEnum.Number
         },
         {
-          leftLabel: 'And each hour are',
-          rightLabel: 'words',
+          leftLabel: 'Y una jornada tiene',
+          rightLabel: 'horas',
+          type: TypeEnum.Number,
+          baseValue: 6
+        },
+        {
+          leftLabel: '¿Cuánto me cobra por',
+          rightLabel: 'hora?',
+          type: TypeEnum.Number,
+          baseValue: 1
+        }
+      ],
+      result: {
+        size: SizeEnum.big,
+        color: ColorEnum.red,
+        value: null,
+        unit: 'USD'
+      }
+    },
+    {
+      inputs: [
+        {
+          leftLabel: 'Me cobra',
+          rightLabel: 'por página',
           type: TypeEnum.Number
         },
         {
-          leftLabel: 'How much will charge for',
-          rightLabel: 'word',
+          leftLabel: 'Y cada página tiene',
+          rightLabel: 'palabras',
+          type: TypeEnum.Number
+        },
+        {
+          leftLabel: '¿Cuánto me cobra por',
+          rightLabel: 'palabra?',
           type: TypeEnum.Number,
           baseValue: 1
         }

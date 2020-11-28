@@ -15,7 +15,7 @@ import { RouteEnum } from '@shared/enums/routes.enums';
 export class AppComponent implements OnInit, OnDestroy {
   private sub = new Subscription();
   public contentWide = 10;
-  public mainTitle = 'Rule of Three';
+  public mainTitle = 'Tengo un traductor/interprete que...';
 
   constructor(
     private formService: FormStructureService,
@@ -40,9 +40,6 @@ export class AppComponent implements OnInit, OnDestroy {
               break;
             case RouteEnum.Third:
               this.setFormData(this.formDataService.data[2]);
-              break;
-            case RouteEnum.Fourth:
-              this.setFormData(this.formDataService.data[3]);
               break;
           }
         }

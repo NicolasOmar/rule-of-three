@@ -51,7 +51,7 @@ export class RuleFormComponent implements OnInit {
       this.ruleForm.valueChanges.subscribe((changes: FormStructure) => {
         this.result.value =
           changes.first && changes.second && changes.third && this.ruleForm.valid
-            ? ((changes.third * changes.second) / changes.first).toString()
+            ? ((changes.third * changes.first) / changes.second).toString()
             : null;
       })
     );
