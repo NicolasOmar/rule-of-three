@@ -1,11 +1,12 @@
 {
   "name": "rule-of-three",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --prod --baseHref=/rule-of-three/",
     "test": "ng test --codeCoverage=true",
+    "test-once": "ng test --codeCoverage=false --watch=false --browsers=ChromeHeadlessCustom",
     "test:ci": "ng test --codeCoverage=true --watch=false --browsers=ChromeHeadlessCustom",
     "e2e": "ng e2e",
     "local": "ng serve --o",
@@ -68,7 +69,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "npm run tsc && lint-staged",
-      "pre-push": "npm run update-version"
+      "pre-push": "npm run test-once && npm run update-version"
     }
   }
 }

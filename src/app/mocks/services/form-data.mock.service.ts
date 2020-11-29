@@ -7,7 +7,7 @@ import { SizeEnum, ColorEnum, TypeEnum } from '@shared/enums/inputs.enums';
 @Injectable({
   providedIn: 'root'
 })
-export class FormDataService {
+export class FormDataMockService {
   public data: Array<FormConfig> = [
     {
       inputs: [
@@ -66,7 +66,7 @@ export class FormDataService {
       inputs: [
         {
           leftLabel: 'Me cobra',
-          rightLabel: 'USD por página',
+          rightLabel: 'por página',
           type: TypeEnum.Number
         },
         {

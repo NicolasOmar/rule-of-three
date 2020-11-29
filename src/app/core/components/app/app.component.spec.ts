@@ -1,6 +1,13 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+// COMPONENT
 import { AppComponent } from './app.component';
+// SERVICES
+import { FormDataService } from '@core/services/form-data.service';
+import { FormStructureService } from '@core/services/form-structure.service';
+// MOCKS
+import { FormDataMockService } from 'src/app/mocks/services/form-data.mock.service';
+import { FormStructureMockService } from 'src/app/mocks/services/form-structure.mock.service';
 
 const configMock = {
   mainTitle: 'Rule of Three'
@@ -14,6 +21,16 @@ describe('AppComponent', () => {
     await TestBed.configureTestingModule({
       imports: [
         RouterTestingModule
+      ],
+      providers: [
+        {
+          provide: FormStructureService,
+          useClass: FormStructureMockService
+        },
+        {
+          provide: FormDataService,
+          useClass: FormDataMockService
+        }
       ]
     }).compileComponents();
   });
