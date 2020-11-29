@@ -4,8 +4,11 @@ import { FormBuilder } from '@angular/forms';
 import { RuleFormComponent } from './rule-form.component';
 // SERVICES
 import { FormStructureService } from '@core/services/form-structure.service';
+// INTERFACES
+import { FormStructure } from '@shared/interfaces/form.interfaces';
 // MOCKS
 import { FormStructureMockService } from '@mocks/services/form-structure.mock.service';
+import { formUpdateValues, returnRuleResult } from '@mocks/data/form-data.mock';
 
 describe('RuleFormComponent', () => {
   let component: RuleFormComponent;
@@ -34,4 +37,23 @@ describe('RuleFormComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should calculate result and form validation status after form input changes', () => {
+    const nullStructure: FormStructure = {
+      first: null,
+      second: null,
+      third: null
+    };
+
+    formUpdateValues.forEach(
+      formUpdate => {
+        const calculatedResult = returnRuleResult(formUpdate);
+        component.ruleForm.patchValue({ ...nullStructure })
+        component.ruleForm.patchValue({ ...formUpdate });
+
+        expect(component.result.value).toBe(calculatedResult);
+        expect(component.ruleForm.valid).toBe(!!(calculatedResult));
+      }
+    );
+  })
 });

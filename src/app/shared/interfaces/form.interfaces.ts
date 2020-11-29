@@ -1,9 +1,9 @@
 import { ColorEnum, SizeEnum, TypeEnum } from '@shared/enums/inputs.enums';
 
 export interface FormStructure {
-  first: number;
-  second: number;
-  third: number;
+  first?: number;
+  second?: number;
+  third?: number;
 }
 
 export interface InputConfig {

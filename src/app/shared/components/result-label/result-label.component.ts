@@ -18,9 +18,8 @@ export class ResultLabelComponent implements OnInit {
   }
 
   private setClasses(): void {
-    const ui = 'ui';
     const size = this.config.size || SizeEnum.big;
     const color = this.config.color || ColorEnum.red;
-    this.labelClasses = `${ui} ${size} ${color} horizontal label`;
+    this.labelClasses = `ui ${size} ${color} horizontal label`;
   }
 }

@@ -1,12 +1,13 @@
 {
   "name": "rule-of-three",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --prod --baseHref=/rule-of-three/",
-    "test": "ng test --codeCoverage=true",
-    "test-once": "ng test --codeCoverage=false --watch=false --browsers=ChromeHeadlessCustom",
+    "test": "ng test",
+    "test-once": "ng test --watch=false --browsers=ChromeHeadlessCustom",
+    "check-coverage": "ng test --codeCoverage=true --browsers=ChromeHeadlessCustom",
     "test:ci": "ng test --codeCoverage=true --watch=false --browsers=ChromeHeadlessCustom",
     "e2e": "ng e2e",
     "local": "ng serve --o",
