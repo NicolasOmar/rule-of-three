@@ -5,7 +5,7 @@ import { RuleFormComponent } from '@core/components/rule-form/rule-form.componen
 // ENUMS
 import { RouteEnum, RouteStringEnum } from '@shared/enums/routes.enums';
 
-const routes: Routes = [
+export const routes: Routes = [
   {
     path: '',
     redirectTo: RouteEnum.First,
