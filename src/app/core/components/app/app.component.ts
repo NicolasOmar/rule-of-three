@@ -15,7 +15,7 @@ import { RouteEnum } from '@shared/enums/routes.enums';
 export class AppComponent implements OnInit, OnDestroy {
   private sub = new Subscription();
   public contentWide = 10;
-  public mainTitle = 'Tengo un traductor/interprete que...';
+  public mainTitle = 'Tengo un traductor/intérprete que...';
 
   constructor(
     private formService: FormStructureService,
@@ -32,14 +32,14 @@ export class AppComponent implements OnInit, OnDestroy {
       this.router.events.subscribe(route => {
         if (route instanceof NavigationEnd) {
           switch (route.url) {
-            case RouteEnum.First:
-              this.setFormData(this.formDataService.data[0]);
-              break;
             case RouteEnum.Second:
               this.setFormData(this.formDataService.data[1]);
               break;
             case RouteEnum.Third:
               this.setFormData(this.formDataService.data[2]);
+              break;
+            default:
+              this.setFormData(this.formDataService.data[0]);
               break;
           }
         }

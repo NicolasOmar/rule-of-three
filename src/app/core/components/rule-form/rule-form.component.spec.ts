@@ -3,9 +3,9 @@ import { FormBuilder } from '@angular/forms';
 // COMPONENTS
 import { RuleFormComponent } from './rule-form.component';
 // SERVICES
-import { FormStructureMockService } from 'src/app/mocks/services/form-structure.mock.service';
-// MOCKS
 import { FormStructureService } from '@core/services/form-structure.service';
+// MOCKS
+import { FormStructureMockService } from '@mocks/services/form-structure.mock.service';
 
 describe('RuleFormComponent', () => {
   let component: RuleFormComponent;

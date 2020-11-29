@@ -6,8 +6,8 @@ import { AppComponent } from './app.component';
 import { FormDataService } from '@core/services/form-data.service';
 import { FormStructureService } from '@core/services/form-structure.service';
 // MOCKS
-import { FormDataMockService } from 'src/app/mocks/services/form-data.mock.service';
-import { FormStructureMockService } from 'src/app/mocks/services/form-structure.mock.service';
+import { FormDataMockService } from '@mocks/services/form-data.mock.service';
+import { FormStructureMockService } from '@mocks/services/form-structure.mock.service';
 
 const configMock = {
   mainTitle: 'Rule of Three'
