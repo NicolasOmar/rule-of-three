@@ -14,7 +14,8 @@ export class FormDataService {
         {
           leftLabel: 'Me cobra',
           rightLabel: 'USD por hora',
-          type: TypeEnum.Number
+          type: TypeEnum.Number,
+          setFocus: true
         },
         {
           leftLabel: 'La hora equivale a',
@@ -38,9 +39,10 @@ export class FormDataService {
     {
       inputs: [
         {
-          leftLabel: 'Cobra',
+          leftLabel: 'Me cobra',
           rightLabel: 'USD por jornada',
-          type: TypeEnum.Number
+          type: TypeEnum.Number,
+          setFocus: true
         },
         {
           leftLabel: 'Y una jornada tiene',
@@ -67,7 +69,8 @@ export class FormDataService {
         {
           leftLabel: 'Me cobra',
           rightLabel: 'USD por página',
-          type: TypeEnum.Number
+          type: TypeEnum.Number,
+          setFocus: true
         },
         {
           leftLabel: 'Y cada página tiene',

@@ -14,6 +14,7 @@ export interface InputConfig {
   type?: TypeEnum;
   isReadonly?: boolean;
   baseValue?: string | number;
+  setFocus?: boolean;
 }
 
 export interface LabelConfig {

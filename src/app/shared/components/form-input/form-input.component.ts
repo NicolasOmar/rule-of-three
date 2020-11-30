@@ -1,4 +1,4 @@
-import { Component, Input, Optional, Self } from '@angular/core';
+import { AfterViewInit, Component, Input, Optional, Renderer2, Self } from '@angular/core';
 import { NgControl } from '@angular/forms';
 // INTERFACES
 import { InputConfig } from '@shared/interfaces/form.interfaces';
@@ -10,7 +10,7 @@ import { TypeEnum } from '@shared/enums/inputs.enums';
   templateUrl: './form-input.component.html',
   styleUrls: ['./form-input.component.scss']
 })
-export class FormInputComponent {
+export class FormInputComponent implements AfterViewInit {
   @Input() config: InputConfig;
 
   public typeEnum = TypeEnum;
@@ -18,8 +18,12 @@ export class FormInputComponent {
   public onChanged;
   public onTouched;
 
-  constructor(@Self() @Optional() public control: NgControl) {
+  constructor(@Self() @Optional() public control: NgControl, private renderer: Renderer2) {
     this.control && (this.control.valueAccessor = this);
+  }
+
+  ngAfterViewInit(): void {
+    this.setInputFocus();
   }
 
   public onInput(value: string | number): void {
@@ -41,5 +45,12 @@ export class FormInputComponent {
 
   public get invalid(): boolean {
     return this.control ? this.control.invalid && this.control.touched : false;
+  }
+
+  private setInputFocus(): void {
+    if (this.config.setFocus) {
+      const element = this.renderer.selectRootElement('.focusInput');
+      element.focus();
+    }
   }
 }
